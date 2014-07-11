@@ -18,15 +18,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // HTTPサーバーインスタンスを生成する
-    self.httpServer = [HTTPServer new];
+
+    httpServer = [[RoutingHTTPServer alloc] init];
     
     // ポート未指定の場合ランダムで設定されるので、適当なポート番号を指定する
     [httpServer setPort:50000];
     
     // ドキュメントルートに「htdocs」を指定する
     [httpServer setDocumentRoot:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"htdocs"]];
-
+    
+    //setup Routes
+    [self setupRoutes];
     // HTTPサーバーを起動する
     [self startServer];
     
@@ -68,6 +70,7 @@
     if (![httpServer start:&error]) {
         NSLog(@"Error starting HTTP Server: %@", error);
     }
+    NSLog(@"Server started");
 }
 
 /**
@@ -76,7 +79,22 @@
 - (void)stopServer
 {
     [httpServer stop];
+    NSLog(@"Server stopped");
 }
 
 
+#pragma mark - Route mehtods
+
+- (void)setupRoutes {
+    [httpServer get:@"/dialog" withBlock:^(RouteRequest *request, RouteResponse *response) {
+        [response respondWithString:@"Hello!"];
+    }];
+    
+    // Routes can also be handled through selectors
+    [httpServer handleMethod:@"GET" withPath:@"/selector" target:self selector:@selector(handleSelectorRequest:withResponse:)];
+}
+
+- (void)handleSelectorRequest:(RouteRequest *)request withResponse:(RouteResponse *)response {
+    [response respondWithString:@"Handled through selector"];
+}
 @end

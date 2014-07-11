@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CocoaHTTPServer/HTTPServer.h>
+#import <RoutingHTTPServer/RoutingHTTPServer.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -16,7 +16,7 @@
 /**
  HTTPサーバーインスタンス
  */
-@property (strong, nonatomic) HTTPServer *httpServer;
+@property (strong, nonatomic) RoutingHTTPServer *httpServer;
 
 
 @end
