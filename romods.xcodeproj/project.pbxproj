@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FB216982D40490B85D2B23A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4ACB6BD2884789A75E08A6 /* libPods.a */; };
 		9BE250B2196EEC78002FA54D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE250B1196EEC78002FA54D /* main.m */; };
 		9BE250B5196EEC78002FA54D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE250B4196EEC78002FA54D /* AppDelegate.m */; };
 		9BE250B8196EEC78002FA54D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE250B7196EEC78002FA54D /* ViewController.m */; };
 		9BE250BB196EEC78002FA54D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE250B9196EEC78002FA54D /* Main.storyboard */; };
 		9BE250BD196EEC78002FA54D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE250BC196EEC78002FA54D /* Images.xcassets */; };
 		9BE250C9196EEC78002FA54D /* romodsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE250C8196EEC78002FA54D /* romodsTests.m */; };
+		9BE250D3196EEDDE002FA54D /* htdocs in Resources */ = {isa = PBXBuildFile; fileRef = 9BE250D2196EEDDE002FA54D /* htdocs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		533917EF48DD477B9F63153B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		9BE250AC196EEC78002FA54D /* romods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = romods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE250B0196EEC78002FA54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BE250B1196EEC78002FA54D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -38,6 +41,8 @@
 		9BE250C2196EEC78002FA54D /* romodsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = romodsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE250C7196EEC78002FA54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BE250C8196EEC78002FA54D /* romodsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = romodsTests.m; sourceTree = "<group>"; };
+		9BE250D2196EEDDE002FA54D /* htdocs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = htdocs; sourceTree = "<group>"; };
+		DD4ACB6BD2884789A75E08A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB216982D40490B85D2B23A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +64,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B6B0B51EE274682AE34E25E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD4ACB6BD2884789A75E08A6 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9BE250A3196EEC78002FA54D = {
 			isa = PBXGroup;
 			children = (
 				9BE250AE196EEC78002FA54D /* romods */,
 				9BE250C5196EEC78002FA54D /* romodsTests */,
 				9BE250AD196EEC78002FA54D /* Products */,
+				533917EF48DD477B9F63153B /* Pods.xcconfig */,
+				4B6B0B51EE274682AE34E25E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +95,7 @@
 		9BE250AE196EEC78002FA54D /* romods */ = {
 			isa = PBXGroup;
 			children = (
+				9BE250D2196EEDDE002FA54D /* htdocs */,
 				9BE250B3196EEC78002FA54D /* AppDelegate.h */,
 				9BE250B4196EEC78002FA54D /* AppDelegate.m */,
 				9BE250B6196EEC78002FA54D /* ViewController.h */,
@@ -123,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BE250CC196EEC78002FA54D /* Build configuration list for PBXNativeTarget "romods" */;
 			buildPhases = (
+				A1881272848146A3BE7D00F8 /* Check Pods Manifest.lock */,
 				9BE250A8196EEC78002FA54D /* Sources */,
 				9BE250A9196EEC78002FA54D /* Frameworks */,
 				9BE250AA196EEC78002FA54D /* Resources */,
+				3A5561F6A947469A86CCB918 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BE250D3196EEDDE002FA54D /* htdocs in Resources */,
 				9BE250BB196EEC78002FA54D /* Main.storyboard in Resources */,
 				9BE250BD196EEC78002FA54D /* Images.xcassets in Resources */,
 			);
@@ -209,6 +229,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A5561F6A947469A86CCB918 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1881272848146A3BE7D00F8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9BE250A8196EEC78002FA54D /* Sources */ = {
@@ -329,6 +382,7 @@
 		};
 		9BE250CD196EEC78002FA54D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 533917EF48DD477B9F63153B /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -340,6 +394,7 @@
 		};
 		9BE250CE196EEC78002FA54D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 533917EF48DD477B9F63153B /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -402,6 +457,7 @@
 				9BE250CE196EEC78002FA54D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BE250CF196EEC78002FA54D /* Build configuration list for PBXNativeTarget "romodsTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +466,7 @@
 				9BE250D1196EEC78002FA54D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
