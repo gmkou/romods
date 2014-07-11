@@ -70,7 +70,6 @@
     if (![httpServer start:&error]) {
         NSLog(@"Error starting HTTP Server: %@", error);
     }
-    NSLog(@"Server started");
 }
 
 /**
@@ -79,7 +78,6 @@
 - (void)stopServer
 {
     [httpServer stop];
-    NSLog(@"Server stopped");
 }
 
 
