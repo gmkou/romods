@@ -7,28 +7,25 @@
 //
 
 #import "AppDelegate.h"
-#import <CocoaHTTPServer/HTTPServer.h>
 
 @interface AppDelegate ()
-/**
- HTTPサーバーインスタンス
- */
-@property (strong, nonatomic) HTTPServer *httpServer;
 
 @end
 
 @implementation AppDelegate
-            
+
+@synthesize httpServer;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // HTTPサーバーインスタンスを生成する
     self.httpServer = [HTTPServer new];
     
     // ポート未指定の場合ランダムで設定されるので、適当なポート番号を指定する
-    self.httpServer.port = 50000;
+    [httpServer setPort:50000];
     
     // ドキュメントルートに「htdocs」を指定する
-    self.httpServer.documentRoot = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"htdocs"];
+    [httpServer setDocumentRoot:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"htdocs"]];
 
     // HTTPサーバーを起動する
     [self startServer];
@@ -68,7 +65,7 @@
 {
     NSError *error;
     
-    if (![self.httpServer start:&error]) {
+    if (![httpServer start:&error]) {
         NSLog(@"Error starting HTTP Server: %@", error);
     }
 }
@@ -78,7 +75,8 @@
  */
 - (void)stopServer
 {
-    [self.httpServer stop];
+    [httpServer stop];
 }
+
 
 @end
