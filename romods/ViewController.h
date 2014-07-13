@@ -19,6 +19,7 @@
 @property IBOutlet UILabel* debugText;
 
 @property (nonatomic, strong) RMCoreRobot<HeadTiltProtocol, DriveProtocol, LEDProtocol> *Romo;
+@property (nonatomic, strong) RMCharacter *RomoCharacter;
 
 - (IBAction)pushLEDBtn:(id)sender;
 - (void)blinkLED ;
@@ -28,5 +29,7 @@
 - (void)stop ;
 - (void)turnRight ;
 - (void)turnLeft ;
+- (void)emotionRandom ;
+
 @end
 

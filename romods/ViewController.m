@@ -30,6 +30,13 @@
     // To receive messages when Robots connect & disconnect, set RMCore's delegate to self
     [RMCore setDelegate:self];
     
+    self.RomoCharacter = [RMCharacter Romo];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.RomoCharacter addToSuperview:self.view];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,6 +69,11 @@
 - (IBAction)pushTiltBtn:(id)sender
 {
     [self headTilt];
+}
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.RomoCharacter mumble];
 }
 
 #pragma mark - IPAddress mehtods
@@ -118,6 +130,7 @@
 
 - (void)goForward {
     [self stop];
+    self.RomoCharacter.emotion = RMCharacterEmotionExcited;
     [self.Romo driveForwardWithSpeed:1.0];
 }
 - (void)goBackward {
@@ -130,15 +143,38 @@
         [self.Romo stopDriving];
     }
     [self.Romo stopDriving];
+    self.RomoCharacter.emotion = RMCharacterEmotionHappy;
+    [self lookDefault];
 }
 
 - (void)turnRight {
     [self stop];
-    [self.Romo turnByAngle:30.0 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE completion:nil];
-}
-- (void)turnLeft {
-    [self stop];
-    [self.Romo turnByAngle:-30.0 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE completion:nil];
+    [self lookRight];
+    [self.Romo turnByAngle:-30.0 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
+                completion:nil];
 }
 
+- (void)turnLeft {
+    [self stop];
+    [self lookLeft];
+    [self.Romo turnByAngle:30.0 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
+                completion:nil];
+}
+
+-(void)emotionRandom {
+    [self.RomoCharacter mumble];
+}
+
+- (void) lookLeft {
+    RMPoint3D lookPoint = RMPoint3DMake(1.0, 0.0, 1.0);
+    [self.RomoCharacter lookAtPoint:lookPoint animated:YES];
+}
+
+- (void) lookRight {
+    RMPoint3D lookPoint = RMPoint3DMake(-1.0, 0.0, 1.0);
+    [self.RomoCharacter lookAtPoint:lookPoint animated:YES];
+}
+- (void) lookDefault {
+    [self.RomoCharacter lookAtDefault];
+}
 @end
