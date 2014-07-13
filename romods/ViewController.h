@@ -10,6 +10,7 @@
 #import "romods.h"
 #import <RMCore/RMCore.h>
 #import <RMCharacter/RMCharacter.h>
+#import "AppDelegate.h"
 
 @interface ViewController : UIViewController <RMCoreDelegate> {
     UILabel *debugText;

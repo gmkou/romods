@@ -15,6 +15,7 @@
 @implementation AppDelegate
 
 @synthesize httpServer;
+@synthesize viewController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -90,6 +91,7 @@
     [httpServer get:@"/hello/:name" withBlock:^(RouteRequest *request, RouteResponse *response) {
         [response respondWithString:[NSString stringWithFormat:@"Hello %@!", [request param:@"name"]]];
         NSLog(@"hello %@", [request param:@"name"]);
+        
     }];
 
     [httpServer get:@"\?dialog" withBlock:^(RouteRequest *request, RouteResponse *response) {

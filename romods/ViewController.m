@@ -22,9 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.viewController = self;
+
     [self getIPAddress];
+    
     // To receive messages when Robots connect & disconnect, set RMCore's delegate to self
     [RMCore setDelegate:self];
+    
 }
 
 - (void)didReceiveMemoryWarning {
