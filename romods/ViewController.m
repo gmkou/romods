@@ -117,20 +117,28 @@
 }
 
 - (void)goForward {
-    if ([self.Romo isDriving]) {
-        [self.Romo stopDriving];
-    }
+    [self stop];
     [self.Romo driveForwardWithSpeed:1.0];
 }
 - (void)goBackward {
-    if ([self.Romo isDriving]) {
-        [self.Romo stopDriving];
-    }
+    [self stop];
     [self.Romo driveBackwardWithSpeed:0.5];
 }
 
 - (void)stop {
+    if ([self.Romo isDriving]) {
+        [self.Romo stopDriving];
+    }
     [self.Romo stopDriving];
+}
+
+- (void)turnRight {
+    [self stop];
+    [self.Romo turnByAngle:30.0 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE completion:nil];
+}
+- (void)turnLeft {
+    [self stop];
+    [self.Romo turnByAngle:-30.0 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE completion:nil];
 }
 
 @end
