@@ -16,18 +16,42 @@
 @end
 
 @implementation ViewController
-            
+
+@synthesize debugText;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     [self getIPAddress];
-
+    // To receive messages when Robots connect & disconnect, set RMCore's delegate to self
+    [RMCore setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)robotDidConnect:(RMCoreRobot *)robot
+{
+    if (robot.isDrivable && robot.isHeadTiltable && robot.isLEDEquipped) {
+        self.debugText.text = @"connected!";
+        self.Romo = (RMCoreRobot<HeadTiltProtocol, DriveProtocol, LEDProtocol> *) robot;
+    }
+}
+
+- (void)robotDidDisconnect:(RMCoreRobot *)robot
+{
+    if (robot == self.Romo) {
+        self.Romo = nil;
+        self.debugText.text = @"disconnected!";
+    }
+}
+
+#pragma mark - Actions
+- (IBAction)pushLEDBtn:(id)sender
+{
+    [self.Romo.LEDs blinkWithPeriod:0.5 dutyCycle:0.1];
 }
 
 #pragma mark - IPAddress mehtods

@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "romods.h"
+#import <RMCore/RMCore.h>
+#import <RMCharacter/RMCharacter.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <RMCoreDelegate> {
+    UILabel *debugText;
+}
+
+@property IBOutlet UILabel* debugText;
+
+@property (nonatomic, strong) RMCoreRobot<HeadTiltProtocol, DriveProtocol, LEDProtocol> *Romo;
+
+- (IBAction)pushLEDBtn:(id)sender;
 
 @end
 
