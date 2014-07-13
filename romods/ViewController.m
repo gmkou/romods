@@ -56,12 +56,12 @@
     }
     // Free memory
     freeifaddrs(interfaces);
-    NSLog(@"ipaddress:%@", address);
+    NSLog(@"ipaddress:%@:%d", address, SERVER_PORT);
     
     UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(10, 10, 100, 50);
+    label.frame = CGRectMake(10, 10, 200, 50);
     label.font = [UIFont fontWithName:@"AppleGothic" size:12];
-    label.text = address;
+    label.text = [NSString stringWithFormat:@"IPAddress:%@:%d", address, SERVER_PORT];
     [self.view addSubview:label];
     
     return address;

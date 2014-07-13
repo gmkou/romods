@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <RoutingHTTPServer/RoutingHTTPServer.h>
+#import "romods.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

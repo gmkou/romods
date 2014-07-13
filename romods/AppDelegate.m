@@ -22,7 +22,7 @@
     httpServer = [[RoutingHTTPServer alloc] init];
     
     // ポート未指定の場合ランダムで設定されるので、適当なポート番号を指定する
-    [httpServer setPort:50000];
+    [httpServer setPort:SERVER_PORT];
     
     // ドキュメントルートに「htdocs」を指定する
     [httpServer setDocumentRoot:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"htdocs"]];
