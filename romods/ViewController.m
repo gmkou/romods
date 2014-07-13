@@ -24,7 +24,7 @@
     
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.viewController = self;
-
+    
     [self getIPAddress];
     
     // To receive messages when Robots connect & disconnect, set RMCore's delegate to self
@@ -56,7 +56,12 @@
 #pragma mark - Actions
 - (IBAction)pushLEDBtn:(id)sender
 {
-    [self.Romo.LEDs blinkWithPeriod:0.5 dutyCycle:0.1];
+    [self blinkLED];
+}
+
+- (IBAction)pushTiltBtn:(id)sender
+{
+    [self headTilt];
 }
 
 #pragma mark - IPAddress mehtods
@@ -95,5 +100,20 @@
     
     return address;
     
+}
+
+#pragma mark - Action mehtods
+- (void)blinkLED {
+    [self.Romo.LEDs blinkWithPeriod:0.5 dutyCycle:0.1];
+}
+
+- (void)headTilt {
+    // HeadTilt
+    if (self.Romo.headAngle < self.Romo.maximumHeadTiltAngle - 1) {
+        [self.Romo tiltToAngle:self.Romo.maximumHeadTiltAngle completion:nil];
+    } else {
+        [self.Romo tiltToAngle:self.Romo.minimumHeadTiltAngle completion:nil];
+    }
+
 }
 @end

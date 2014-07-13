@@ -21,6 +21,7 @@
 @property (nonatomic, strong) RMCoreRobot<HeadTiltProtocol, DriveProtocol, LEDProtocol> *Romo;
 
 - (IBAction)pushLEDBtn:(id)sender;
-
+- (void)blinkLED ;
+- (void)headTilt ;
 @end
 

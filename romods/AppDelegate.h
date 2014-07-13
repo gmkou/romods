@@ -10,9 +10,12 @@
 #import <RoutingHTTPServer/RoutingHTTPServer.h>
 #import "romods.h"
 
+@class ViewController;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (retain, nonatomic) ViewController *viewController;
 
 /**
  HTTPサーバーインスタンス

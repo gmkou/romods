@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,6 +16,7 @@
 @implementation AppDelegate
 
 @synthesize httpServer;
+@synthesize window = _window;
 @synthesize viewController;
 
 
@@ -84,19 +86,10 @@
 #pragma mark - Route mehtods
 
 - (void)setupRoutes {
-    [httpServer get:@"/dialog" withBlock:^(RouteRequest *request, RouteResponse *response) {
-        [response respondWithString:@"Hello!"];
-    }];
-    
-    [httpServer get:@"/hello/:name" withBlock:^(RouteRequest *request, RouteResponse *response) {
-        [response respondWithString:[NSString stringWithFormat:@"Hello %@!", [request param:@"name"]]];
-        NSLog(@"hello %@", [request param:@"name"]);
-        
-    }];
-
-    [httpServer get:@"\?dialog" withBlock:^(RouteRequest *request, RouteResponse *response) {
-        // do something
-        NSLog (@"?dialog");
+    [httpServer get:@"/LED" withBlock:^(RouteRequest *request, RouteResponse *response) {
+        [response respondWithString:@"LED!"];
+        NSLog(@"LED!");
+        [viewController blinkLED];
     }];
     
     // Routes can also be handled through selectors
