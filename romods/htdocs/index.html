@@ -2,11 +2,57 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>CocoaHTTPServer を利用して iOS アプリにブラウザからアクセスする</title>
+    <meta name="viewport" content="width=320" />
+    <title>RomoDS</title>
+    <script type="text/javascript">
+        // エレメントにイベント関数を追加する
+        var addEvent = window.addEventListener ?
+            function(element, type, func){ element.addEventListener(type, func, false); } :
+            function(element, type, func){ element.attachEvent("on"+type, func); };
+        // エレメントからイベント関数を削除する
+        var removeEvent = window.removeEventListener ?
+            function(element, type, func){ element.removeEventListener(type, func, false); } :
+            function(element, type, func){ element.detachEvent("on"+type, func); };
+        // イベントのデフォルト動作を抑制する
+        function preventDefault(event){ if(event.preventDefault){event.preventDefault();}else{event.returnValue = false;} }
+        
+        var count = 0;
+        
+        // キーダウン処理
+        function onKeyDown(event)
+        {
+            document.getElementById("txKeyDown").value = event.keyCode;
+            document.getElementById("txCount").value = ++count;
+            preventDefault(event);
+        }
+        // キーアップ処理
+        function onKeyUp(event)
+        {
+            document.getElementById("txKeyUp").value = event.keyCode;
+            document.getElementById("txCount").value = ++count;
+            preventDefault(event);
+        }
+    
+    //キーイベント登録
+    addEvent(document, "keydown", onKeyDown);
+    addEvent(document, "keyup", onKeyUp);
+    </script>
 </head>
 <body>
-    <strong>こんにちは、みなさーーん！</strong>
-    <a href="/dialog">show dialog</a>
-    <input type="button" name="dialog" value="Dialog">
+    <strong>RomoDS</strong>
+    <a href="/LED">/LED</a>
+    <a href="/FORWARD">/FORWARD</a>
+    <a href="/BACKWARD">/BACKWARD</a>
+    <a href="/RIGHT">/RIGHT</a>
+    <a href="/LEFT">/LEFT</a>
+    <a href="/STOP">/STOP</a>
+    
+    <div style="line-height:180%;">
+    keydown <input type="text" id="txKeyDown" size="5" value="" /><br />
+    keyup <input type="text" id="txKeyUp" size="5" value="" /><br />
+    count <input type="text" id="txCount" size="5" value="" /><br />
+    </div>
+
 </body>
+
 </html>
