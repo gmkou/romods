@@ -93,16 +93,24 @@
         [viewController blinkLED];
     }];
     [httpServer get:@"/FORWARD" withBlock:^(RouteRequest *request, RouteResponse *response) {
-        [response respondWithString:@"FORWARD!"];
+        [response respondWithString:@"<html><body>FORWARD!</body></html>"];
         [viewController goForward];
     }];
     [httpServer get:@"/STOP" withBlock:^(RouteRequest *request, RouteResponse *response) {
-        [response respondWithString:@"STOP!"];
+        [response respondWithString:@"<html><body>STOP!</body></html>"];
         [viewController stop];
     }];
-    [httpServer get:@"/BACKWORD" withBlock:^(RouteRequest *request, RouteResponse *response) {
-        [response respondWithString:@"BACKWARD!"];
+    [httpServer get:@"/BACKWARD" withBlock:^(RouteRequest *request, RouteResponse *response) {
+        [response respondWithString:@"<html><body>BACKWARD!</body></html>"];
         [viewController goBackward];
+    }];
+    [httpServer get:@"/RIGHT" withBlock:^(RouteRequest *request, RouteResponse *response) {
+        [response respondWithString:@"<html><body>RIGHT!</body></html>"];
+        [viewController turnRight];
+    }];
+    [httpServer get:@"/LEFT" withBlock:^(RouteRequest *request, RouteResponse *response) {
+        [response respondWithString:@"<html><body>LEFT!</body></html>"];
+        [viewController turnLeft];
     }];
     
     // Routes can also be handled through selectors
