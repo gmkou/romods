@@ -29,7 +29,7 @@
     
     // ドキュメントルートに「htdocs」を指定する
     [httpServer setDocumentRoot:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"htdocs"]];
-
+    [httpServer setDefaultHeader:@"content-type" value:@"text/html"];
     //setup Routes
     [self setupRoutes];
     // HTTPサーバーを起動する
