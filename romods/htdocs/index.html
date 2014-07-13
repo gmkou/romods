@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=320" />
     <title>RomoDS</title>
     <script type="text/javascript">
+        function fIFrameSrc(url){
+            var obj=document.getElementById("iframe7");
+            obj.src=url;
+        }
         // エレメントにイベント関数を追加する
         var addEvent = window.addEventListener ?
             function(element, type, func){ element.addEventListener(type, func, false); } :
@@ -21,15 +25,32 @@
         // キーダウン処理
         function onKeyDown(event)
         {
-            document.getElementById("txKeyDown").value = event.keyCode;
-            document.getElementById("txCount").value = ++count;
+            //document.getElementById("txKeyDown").value = event.keyCode;
+            //document.getElementById("txCount").value = ++count;
             preventDefault(event);
+            switch (event.keyCode){
+                case 37: //left
+                    fIFrameSrc("./drive/LEFT")
+                    break;
+                case 38: //up
+                    fIFrameSrc("./drive/FORWARD")
+                    break;
+                case 39: //right
+                    fIFrameSrc("./drive/RIGHT")
+                    break;
+                case 40: //down
+                    fIFrameSrc("./drive/STOP")
+                    break;
+                case 13: // "A"
+                    fIFrameSrc("./emotion/RANDOM")
+                    break;
+            }
         }
         // キーアップ処理
         function onKeyUp(event)
         {
-            document.getElementById("txKeyUp").value = event.keyCode;
-            document.getElementById("txCount").value = ++count;
+            //document.getElementById("txKeyUp").value = event.keyCode;
+            //document.getElementById("txCount").value = ++count;
             preventDefault(event);
         }
     
@@ -40,18 +61,24 @@
 </head>
 <body>
     <strong>RomoDS</strong>
-    <a href="/LED">/LED</a>
-    <a href="/FORWARD">/FORWARD</a>
-    <a href="/BACKWARD">/BACKWARD</a>
-    <a href="/RIGHT">/RIGHT</a>
-    <a href="/LEFT">/LEFT</a>
-    <a href="/STOP">/STOP</a>
-    
-    <div style="line-height:180%;">
+    <!--
+     <div style="line-height:180%;">
     keydown <input type="text" id="txKeyDown" size="5" value="" /><br />
     keyup <input type="text" id="txKeyUp" size="5" value="" /><br />
     count <input type="text" id="txCount" size="5" value="" /><br />
     </div>
+    -->
+    <br>
+    <iframe
+        id="iframe7"
+        src="./STOP"
+        width="100" height="50"
+        scrolling="no"
+        frameborder="0"
+        >
+        インラインフレーム対応のブラウザでご覧下さい。
+    </iframe>
+
 
 </body>
 

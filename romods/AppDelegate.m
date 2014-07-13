@@ -88,29 +88,33 @@
 #pragma mark - Route mehtods
 
 - (void)setupRoutes {
-    [httpServer get:@"/LED" withBlock:^(RouteRequest *request, RouteResponse *response) {
+    [httpServer get:@"/drive/LED" withBlock:^(RouteRequest *request, RouteResponse *response) {
         [response respondWithString:@"LED!"];
         [viewController blinkLED];
     }];
-    [httpServer get:@"/FORWARD" withBlock:^(RouteRequest *request, RouteResponse *response) {
+    [httpServer get:@"/drive/FORWARD" withBlock:^(RouteRequest *request, RouteResponse *response) {
         [response respondWithString:@"<html><body>FORWARD!</body></html>"];
         [viewController goForward];
     }];
-    [httpServer get:@"/STOP" withBlock:^(RouteRequest *request, RouteResponse *response) {
+    [httpServer get:@"/drive/STOP" withBlock:^(RouteRequest *request, RouteResponse *response) {
         [response respondWithString:@"<html><body>STOP!</body></html>"];
         [viewController stop];
     }];
-    [httpServer get:@"/BACKWARD" withBlock:^(RouteRequest *request, RouteResponse *response) {
+    [httpServer get:@"/drive/BACKWARD" withBlock:^(RouteRequest *request, RouteResponse *response) {
         [response respondWithString:@"<html><body>BACKWARD!</body></html>"];
         [viewController goBackward];
     }];
-    [httpServer get:@"/RIGHT" withBlock:^(RouteRequest *request, RouteResponse *response) {
+    [httpServer get:@"/drive/RIGHT" withBlock:^(RouteRequest *request, RouteResponse *response) {
         [response respondWithString:@"<html><body>RIGHT!</body></html>"];
         [viewController turnRight];
     }];
-    [httpServer get:@"/LEFT" withBlock:^(RouteRequest *request, RouteResponse *response) {
+    [httpServer get:@"/drive/LEFT" withBlock:^(RouteRequest *request, RouteResponse *response) {
         [response respondWithString:@"<html><body>LEFT!</body></html>"];
         [viewController turnLeft];
+    }];
+    [httpServer get:@"/emotion/RANDOM" withBlock:^(RouteRequest *request, RouteResponse *response) {
+        [response respondWithString:@"<html><body>RANDOM EMOTION!</body></html>"];
+        [viewController emotionRandom];
     }];
     
     // Routes can also be handled through selectors
