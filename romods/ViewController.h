@@ -23,5 +23,10 @@
 - (IBAction)pushLEDBtn:(id)sender;
 - (void)blinkLED ;
 - (void)headTilt ;
+- (void)goForward ;
+- (void)goBackward ;
+- (void)stop ;
+- (void)turnRight ;
+- (void)turnLeft ;
 @end
 

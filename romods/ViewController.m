@@ -114,6 +114,23 @@
     } else {
         [self.Romo tiltToAngle:self.Romo.minimumHeadTiltAngle completion:nil];
     }
-
 }
+
+- (void)goForward {
+    if ([self.Romo isDriving]) {
+        [self.Romo stopDriving];
+    }
+    [self.Romo driveForwardWithSpeed:1.0];
+}
+- (void)goBackward {
+    if ([self.Romo isDriving]) {
+        [self.Romo stopDriving];
+    }
+    [self.Romo driveBackwardWithSpeed:0.5];
+}
+
+- (void)stop {
+    [self.Romo stopDriving];
+}
+
 @end

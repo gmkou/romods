@@ -72,6 +72,7 @@
     if (![httpServer start:&error]) {
         NSLog(@"Error starting HTTP Server: %@", error);
     }
+    NSLog(@"server started");
 }
 
 /**
@@ -80,6 +81,7 @@
 - (void)stopServer
 {
     [httpServer stop];
+    NSLog(@"server stopped");
 }
 
 
@@ -88,8 +90,19 @@
 - (void)setupRoutes {
     [httpServer get:@"/LED" withBlock:^(RouteRequest *request, RouteResponse *response) {
         [response respondWithString:@"LED!"];
-        NSLog(@"LED!");
         [viewController blinkLED];
+    }];
+    [httpServer get:@"/FORWARD" withBlock:^(RouteRequest *request, RouteResponse *response) {
+        [response respondWithString:@"FORWARD!"];
+        [viewController goForward];
+    }];
+    [httpServer get:@"/STOP" withBlock:^(RouteRequest *request, RouteResponse *response) {
+        [response respondWithString:@"STOP!"];
+        [viewController stop];
+    }];
+    [httpServer get:@"/BACKWORD" withBlock:^(RouteRequest *request, RouteResponse *response) {
+        [response respondWithString:@"BACKWARD!"];
+        [viewController goBackward];
     }];
     
     // Routes can also be handled through selectors
