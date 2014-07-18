@@ -25,8 +25,6 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.viewController = self;
     
-    [self getIPAddress];
-    
     // To receive messages when Robots connect & disconnect, set RMCore's delegate to self
     [RMCore setDelegate:self];
     
@@ -37,6 +35,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.RomoCharacter addToSuperview:self.view];
+    
+    [self getIPAddress];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,7 +107,7 @@
     UILabel *label = [[UILabel alloc] init];
     label.frame = CGRectMake(10, 10, 200, 50);
     label.font = [UIFont fontWithName:@"AppleGothic" size:12];
-    label.text = [NSString stringWithFormat:@"IPAddress:%@:%d", address, SERVER_PORT];
+    label.text = [NSString stringWithFormat:@"%@:%d", address, SERVER_PORT];
     [self.view addSubview:label];
     
     return address;
@@ -150,14 +150,14 @@
 - (void)turnRight {
     [self stop];
     [self lookRight];
-    [self.Romo turnByAngle:-30.0 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
+    [self.Romo turnByAngle:-90.0 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
                 completion:nil];
 }
 
 - (void)turnLeft {
     [self stop];
     [self lookLeft];
-    [self.Romo turnByAngle:30.0 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
+    [self.Romo turnByAngle:270.0 withRadius:RM_DRIVE_RADIUS_TURN_IN_PLACE
                 completion:nil];
 }
 
