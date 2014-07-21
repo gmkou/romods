@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7FB216982D40490B85D2B23A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4ACB6BD2884789A75E08A6 /* libPods.a */; };
+		9B0BFD7819722C1B00202850 /* RMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BFD7719722C1B00202850 /* RMCore.framework */; };
+		9B0BFD7A19722C6100202850 /* RMCharacter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BFD7919722C6100202850 /* RMCharacter.framework */; };
+		9B0BFD7C19722E6E00202850 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BFD7B19722E6E00202850 /* ExternalAccessory.framework */; };
+		9B0BFD7E19722E7800202850 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BFD7D19722E7800202850 /* CoreMotion.framework */; };
 		9BE250B2196EEC78002FA54D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE250B1196EEC78002FA54D /* main.m */; };
 		9BE250B5196EEC78002FA54D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE250B4196EEC78002FA54D /* AppDelegate.m */; };
 		9BE250B8196EEC78002FA54D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE250B7196EEC78002FA54D /* ViewController.m */; };
@@ -15,6 +19,8 @@
 		9BE250BD196EEC78002FA54D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE250BC196EEC78002FA54D /* Images.xcassets */; };
 		9BE250C9196EEC78002FA54D /* romodsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE250C8196EEC78002FA54D /* romodsTests.m */; };
 		9BE250D3196EEDDE002FA54D /* htdocs in Resources */ = {isa = PBXBuildFile; fileRef = 9BE250D2196EEDDE002FA54D /* htdocs */; };
+		9BF9D8EE19722FC2003AD65A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF9D8ED19722FC2003AD65A /* AVFoundation.framework */; };
+		9BF9D8F019723074003AD65A /* RMCharacter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9BF9D8EF19723074003AD65A /* RMCharacter.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,11 @@
 
 /* Begin PBXFileReference section */
 		533917EF48DD477B9F63153B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		9B0BFD761972258F00202850 /* romods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = romods.h; sourceTree = "<group>"; };
+		9B0BFD7719722C1B00202850 /* RMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RMCore.framework; sourceTree = "<group>"; };
+		9B0BFD7919722C6100202850 /* RMCharacter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RMCharacter.framework; path = ../../../Downloads/RomoSDK_v1.0C/frameworks/RMCharacter.framework; sourceTree = "<group>"; };
+		9B0BFD7B19722E6E00202850 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		9B0BFD7D19722E7800202850 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		9BE250AC196EEC78002FA54D /* romods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = romods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE250B0196EEC78002FA54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BE250B1196EEC78002FA54D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +53,8 @@
 		9BE250C7196EEC78002FA54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BE250C8196EEC78002FA54D /* romodsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = romodsTests.m; sourceTree = "<group>"; };
 		9BE250D2196EEDDE002FA54D /* htdocs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = htdocs; sourceTree = "<group>"; };
+		9BF9D8ED19722FC2003AD65A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9BF9D8EF19723074003AD65A /* RMCharacter.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RMCharacter.bundle; sourceTree = "<group>"; };
 		DD4ACB6BD2884789A75E08A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -50,6 +63,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF9D8EE19722FC2003AD65A /* AVFoundation.framework in Frameworks */,
+				9B0BFD7E19722E7800202850 /* CoreMotion.framework in Frameworks */,
+				9B0BFD7C19722E6E00202850 /* ExternalAccessory.framework in Frameworks */,
+				9B0BFD7819722C1B00202850 /* RMCore.framework in Frameworks */,
+				9B0BFD7A19722C6100202850 /* RMCharacter.framework in Frameworks */,
 				7FB216982D40490B85D2B23A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +85,10 @@
 		4B6B0B51EE274682AE34E25E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9BF9D8F11972307C003AD65A /* Romo */,
+				9BF9D8ED19722FC2003AD65A /* AVFoundation.framework */,
+				9B0BFD7D19722E7800202850 /* CoreMotion.framework */,
+				9B0BFD7B19722E6E00202850 /* ExternalAccessory.framework */,
 				DD4ACB6BD2884789A75E08A6 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -103,6 +125,7 @@
 				9BE250B9196EEC78002FA54D /* Main.storyboard */,
 				9BE250BC196EEC78002FA54D /* Images.xcassets */,
 				9BE250AF196EEC78002FA54D /* Supporting Files */,
+				9B0BFD761972258F00202850 /* romods.h */,
 			);
 			path = romods;
 			sourceTree = "<group>";
@@ -131,6 +154,16 @@
 				9BE250C7196EEC78002FA54D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9BF9D8F11972307C003AD65A /* Romo */ = {
+			isa = PBXGroup;
+			children = (
+				9B0BFD7919722C6100202850 /* RMCharacter.framework */,
+				9B0BFD7719722C1B00202850 /* RMCore.framework */,
+				9BF9D8EF19723074003AD65A /* RMCharacter.bundle */,
+			);
+			name = Romo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +217,7 @@
 				TargetAttributes = {
 					9BE250AB196EEC78002FA54D = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = QJ9YDTX3SC;
 					};
 					9BE250C1196EEC78002FA54D = {
 						CreatedOnToolsVersion = 6.0;
@@ -217,6 +251,7 @@
 			files = (
 				9BE250D3196EEDDE002FA54D /* htdocs in Resources */,
 				9BE250BB196EEC78002FA54D /* Main.storyboard in Resources */,
+				9BF9D8F019723074003AD65A /* RMCharacter.bundle in Resources */,
 				9BE250BD196EEC78002FA54D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,7 +375,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -386,9 +421,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/kou/Downloads/RomoSDK_v1.0C/frameworks,
+				);
 				INFOPLIST_FILE = romods/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -398,9 +443,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/kou/Downloads/RomoSDK_v1.0C/frameworks,
+				);
 				INFOPLIST_FILE = romods/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
